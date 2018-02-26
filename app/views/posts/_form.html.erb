@@ -13,10 +13,16 @@
 
   <div class="field">
     <%= form.label :code %>
-    <%= form.text_area :code, id: :post_code,:size =>"80x20" %>
+    <%= form.text_area :code, id: :post_code,:size =>"160x20" %>
   </div>
 
   <div class="actions">
     <%= form.submit %>
+
+   <div class="field">
+    <%= form.label :output %>
+    <%= form.text_area :output, id: :post_output,:size =>"160x10" %>
+  </div>
+
   </div>
 <% end %>
