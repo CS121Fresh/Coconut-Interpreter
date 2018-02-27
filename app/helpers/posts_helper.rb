@@ -1,5 +1,5 @@
 module PostsHelper
-	def welcome(text)
-		return text.split("\n")
+	def welcome()
+		return "Hello World"
 	end
 end

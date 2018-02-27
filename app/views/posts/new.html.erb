@@ -20,11 +20,8 @@
 </head>
 <body>
 
-<pre id="editor">function foo(items) {
-    def welcome():
-      print "Hello World"
-
-    welcome()
+<pre id="editor">def foo(items) {
+    print "Hello World" 
 }</pre>
 
 <script src="src-noconflict/ace.js" type="text/python" charset="utf-8"></script>
@@ -32,7 +29,13 @@
     var editor = ace.edit("editor");
     editor.setTheme("ace/theme/twilight");
     editor.session.setMode("ace/mode/python");
+    function produceMessage(){
+        var msg= editor.getValue(); // or session.getValue;
+        return msg;
+    }
+    document.write(produceMessage());
 </script>
+
 
 </body>
 </html>
