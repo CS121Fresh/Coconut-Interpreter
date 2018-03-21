@@ -117,15 +117,11 @@
         alert('Oups! Something goes wrong.');
       });
 
-      // xhttp.onreadystatechange = function() {
-      //     if (this.readyState == 4 && this.status == 200) {
-      //         document.getElementById("editor2").setValue(">>>" + XHR.responseText);
-      //    }
-      // };
-
-      // test output
-      var urlDecodeData = decodeURIComponent(urlEncodedData);
-      editor2.setValue(urlDecodeData);
+      xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+              document.getElementById("editor2").setValue(">>>" + XHR.responseText);
+         }
+      };
 
       // Set up our request
       XHR.open('POST', 'https://tio.run/#coconut/');

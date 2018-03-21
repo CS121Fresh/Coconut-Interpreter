@@ -1,5 +1,7 @@
 {
   "name": "interpreter",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "cmd": "^0.1.0"
+  }
 }
