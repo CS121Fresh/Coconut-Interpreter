@@ -1,7 +1,5 @@
 {
-  "name": "interpreter",
+  "name": "coconut",
   "private": true,
-  "dependencies": {
-    "cmd": "^0.1.0"
-  }
+  "dependencies": {}
 }
