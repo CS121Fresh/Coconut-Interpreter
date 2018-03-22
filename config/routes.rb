@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'demo/index'
+
   resources :posts
 
   root 'interface#index'
