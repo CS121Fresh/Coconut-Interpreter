@@ -2,6 +2,6 @@
 *.cache
 *.DS_Store
 /node_modules
-tmp/cache/
+tmp/*
 # Added by npm-rails
 /node_modules
