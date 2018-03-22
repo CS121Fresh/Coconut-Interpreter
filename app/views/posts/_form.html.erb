@@ -15,10 +15,11 @@
     }
 
     .ace_editor {
+        border: 1px solid lightgray;
         margin: auto;
-        position: relative !important;
-        height: 500px;
-        width: auto;
+        position: relative;
+        height: 400px;
+        width: 500px;
     }
 
     .scrollmargin {
@@ -50,60 +51,55 @@
     print "Hello World"
 </pre>
 
-<div class="margin">
-    <span onclick="sendData(input)" class="button">
+<div class="margin" align="center">
+    <span onclick="sendData()" class="button">
         RUN
     </span>
 </div>
 
-<pre id="editor2">
+<pre id="editor2" style="height: 200px;">
     >>>
 </pre>
+
 
 <script src="src-noconflict/ace.js" type="text/python" charset="utf-8"></script>
 
 <script>
     // create first editor
     var editor = ace.edit("editor");
-    editor.setTheme("ace/theme/twilight");
-    editor.session.setMode("ace/mode/python");
-    editor.renderer.setScrollMargin(10, 10);
     editor.setOptions({
+      mode: "ace/mode/python",
+      theme: "ace/theme/tomorrow",
       autoScrollEditorIntoView: true
     });
-
-    function display(){
-      var input= editor.getValue();
-      document.write(input);
-    }
+    editor.renderer.setScrollMargin(10, 10);
 
     //create the console
     var editor2 = ace.edit("editor2");
     editor2.setOptions({
         mode: "ace/mode/python",
-        theme: "ace/theme/twilight",
+        theme: "ace/theme/tomorrow_night",
         autoScrollEditorIntoView: true
     });
     editor2.renderer.setShowGutter(false);
-    var input= editor.getValue();
-    editor2.setValue(">>>" + input);
+    //dead code that set the value in the console
+      //var input= editor.getValue();
+      //editor2.setValue(">>>" + input);
 
-    function send(){
-      window.location.href = "http://stackoverflow.com";
-    }
-
-    function sendData(data) {
+    //sendData function sends data to server
+    function sendData() {
       var XHR = new XMLHttpRequest();
       var urlEncodedData = "";
       var urlEncodedDataPairs = [];
       var name;
+      var data = editor.getValue();
 
       // Turn the data object into an array of URL-encoded key/value pairs.
       for(name in data) {
         urlEncodedDataPairs.push(encodeURIComponent(name) + '=' + encodeURIComponent(data[name]));
       }
 
-      // Combine the pairs into a single string and replace all %-encoded spaces to 
+      // Combine the pairs into a single string and replace all %-encoded spaces to
       // the '+' character; matches the behaviour of browser form submissions.
       urlEncodedData = urlEncodedDataPairs.join('&').replace(/%20/g, '+');
 
@@ -135,20 +131,6 @@
       document.getElementById("editor2").setValue(XHR.responseText);
     }
 
-
-    function scroll(speed) {
-      var top = editor.container.getBoundingClientRect().top
-      speed = speed || 10
-      if (top > 60 && speed < 500) {
-          if (speed > top - speed - 50)
-              speed = top - speed - 50
-          else
-            setTimeout(scroll, 10, speed + 10)
-            window.scrollBy(0, speed)
-      }
-    }
-
-window.scroll = scroll;
 </script>
 
 </body>

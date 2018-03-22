@@ -55,3 +55,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 #ace editor from https://github.com/codykrieger/ace-rails-ap
 gem 'ace-rails-ap'
+
+#npm_rails from https://rubygems.org/gems/npm-rails/versions/0.2.1
+gem 'npm-rails', '~> 0.2.1'
