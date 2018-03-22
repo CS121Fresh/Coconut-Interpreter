@@ -6,6 +6,7 @@
   <title>Editor</title>
   <style type="text/css" media="screen">
     html {
+       <!-- able webpage to scroll -->
         overflow-y: scroll;
     }
 
@@ -46,16 +47,19 @@
 </head>
 <body>
 
+<!-- precontent in the editor -->
 <pre id="editor">
     print "Hello World"
 </pre>
 
+<!-- Run button: trigger send() function when click -->
 <div class="margin">
     <span onclick="send()" class="button">
         RUN
     </span>
 </div>
 
+<!-- precontent in the console -->
 <pre id="editor2">
     >>>
 </pre>
@@ -63,7 +67,7 @@
 <script src="src-noconflict/ace.js" type="text/python" charset="utf-8"></script>
 
 <script>
-    // create first editor
+    //create first editor
     var editor = ace.edit("editor");
     editor.setTheme("ace/theme/twilight");
     editor.session.setMode("ace/mode/python");
@@ -88,8 +92,9 @@
     var input= editor.getValue();
     editor2.setValue(">>>" + input);
 
+    //Run button's send()function 
     function send(){
-      window.location.href = "http://stackoverflow.com";
+      window.location.href = "https://github.com/CS121Fresh/Coconut-Interpreter";
     }
 
     function scroll(speed) {
