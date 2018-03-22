@@ -1,3 +1,6 @@
 *.log
 *.cache
 *.DS_Store
+/node_modules
+# Added by npm-rails
+/node_modules
