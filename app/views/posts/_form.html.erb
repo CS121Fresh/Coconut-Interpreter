@@ -52,7 +52,7 @@
 </pre>
 
 <div class="margin" align="center">
-    <span onclick="sendData()" class="button">
+    <span onclick="send()" class="button">
         RUN
     </span>
 </div>
@@ -86,7 +86,46 @@
       //var input= editor.getValue();
       //editor2.setValue(">>>" + input);
 
-    //sendData function sends data to server
+    function send(){
+      // window.location.href = "http://stackoverflow.com";
+
+      console.log('Starting...')
+      var cmd = require("/node_modules/node-cmd/cmd.js");
+      console.log(cmd);
+      execute(cmd);
+    }
+
+    function execute(cmd){
+      const processRef=cmd.get('python -i');
+      editor2.setValue(">>>" + cmd);
+      editor2.setValue(">>>");
+      let data_line = '';
+
+      //listen to the python terminal output
+      processRef.stdout.on(
+        'data',
+        function(data) {
+          data_line += data;
+          if (data_line[data_line.length-1] == '\n') {
+            console.log(data_line);
+          }
+        }
+      );
+
+      // change this part to user input
+      const pythonTerminalInput=`primes = [2, 3, 5, 7]
+      for prime in primes:
+          print(prime)
+
+      `;
+
+      //show what we are doing
+      console.log(`>>>${pythonTerminalInput}`);
+
+      //send it to the open python terminal
+      processRef.stdin.write(pythonTerminalInput);
+    }
+
     function sendData() {
       var XHR = new XMLHttpRequest();
       var urlEncodedData = "";
