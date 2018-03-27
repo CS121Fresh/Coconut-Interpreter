@@ -1,10 +1,17 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  layout false
+
+  def home
+    render('posts/home')
+  end
+
+
 
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    render('post/index')
   end
 
   # GET /posts/1
@@ -14,7 +21,7 @@ class PostsController < ApplicationController
 
   # GET /posts/new
   def new
-    @post = Post.new
+    render('posts/new')
   end
 
   # GET /posts/1/edit

@@ -132,7 +132,7 @@ migrate:
 
     rails g controller demo template
 
-    10.. demo_controller.rb
+    10.. demo_controller.rb to render which view
             def template
                 render(:template => 'demo/template')
                  or

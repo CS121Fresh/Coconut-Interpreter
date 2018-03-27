@@ -39,3 +39,503 @@ Processing by DemoController#index as HTML
 Completed 200 OK in 69ms (Views: 65.5ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-03-22 16:49:34 -0700
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by InterfaceController#index as HTML
+  Rendering interface/index.html.erb within layouts/application
+  Rendered interface/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 443ms (Views: 438.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 16:52:51 -0700
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by InterfaceController#index as HTML
+  Rendering interface/index.html.erb within layouts/application
+  Rendered interface/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 459ms (Views: 453.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2018-03-22 16:53:20 -0700
+Processing by PostsController#new as HTML
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (0.3ms)
+  Rendered posts/_form.html.erb (0.0ms)
+  Rendered posts/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 88ms (Views: 70.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/posts/show" for 127.0.0.1 at 2018-03-22 16:53:36 -0700
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  `posts`.* FROM `posts` WHERE `posts`.`id` = 0 LIMIT 1[0m
+Completed 404 Not Found in 8ms (ActiveRecord: 0.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=show):
+  
+app/controllers/posts_controller.rb:67:in `set_post'
+Started GET "/posts/index" for 127.0.0.1 at 2018-03-22 16:53:52 -0700
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"index"}
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT  `posts`.* FROM `posts` WHERE `posts`.`id` = 0 LIMIT 1[0m
+Completed 404 Not Found in 5ms (ActiveRecord: 0.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=index):
+  
+app/controllers/posts_controller.rb:67:in `set_post'
+Started GET "/" for 127.0.0.1 at 2018-03-22 16:54:49 -0700
+Processing by InterfaceController#index as HTML
+  Rendering interface/index.html.erb within layouts/application
+  Rendered interface/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 68ms (Views: 66.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-24 12:13:25 -0700
+  [1m[35m (4.6ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (0.3ms)
+  Rendered posts/_form.html.erb (0.0ms)
+  Rendered posts/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 623ms (Views: 619.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-24 12:14:10 -0700
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Started GET "/" for 127.0.0.1 at 2018-03-24 12:14:20 -0700
+Processing by PostsController#home as HTML
+  Rendering posts/home.html.erb within layouts/application
+  Rendered posts/_form.html.erb (1.1ms)
+  Rendered posts/_form.html.erb (0.0ms)
+  Rendered posts/home.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 82ms (Views: 80.4ms | ActiveRecord: 0.0ms)
+
+
+Processing by PostsController#home as HTML
+  Rendering posts/home.html.erb within layouts/application
+  Rendered posts/_form.html.erb (0.0ms)
+  Rendered posts/_form.html.erb (0.0ms)
+  Rendered posts/home.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 63ms (Views: 62.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/_form" for 127.0.0.1 at 2018-03-24 12:16:20 -0700
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"_form"}
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  `posts`.* FROM `posts` WHERE `posts`.`id` = 0 LIMIT 1[0m
+Completed 404 Not Found in 18ms (ActiveRecord: 3.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=_form):
+  
+app/controllers/posts_controller.rb:67:in `set_post'
+Started GET "/" for 127.0.0.1 at 2018-03-24 12:17:30 -0700
+Processing by PostsController#home as HTML
+  Rendering posts/home.html.erb within layouts/application
+  Rendered posts/_form.html.erb (0.6ms)
+  Rendered posts/_form.html.erb (0.0ms)
+  Rendered posts/home.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 67ms (Views: 66.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-24 12:20:58 -0700
+Processing by PostsController#home as HTML
+  Rendering posts/home.html.erb within layouts/application
+  Rendered posts/_form.html.erb (2.0ms)
+  Rendered posts/_form.html.erb (0.2ms)
+  Rendered posts/home.html.erb within layouts/application (17.4ms)
+Completed 200 OK in 124ms (Views: 118.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-24 12:21:13 -0700
+Processing by PostsController#home as HTML
+  Rendering posts/home.html.erb within layouts/application
+  Rendered posts/_form.html.erb (0.3ms)
+  Rendered posts/_form.html.erb (0.0ms)
+  Rendered posts/home.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 72ms (Views: 70.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-24 12:21:32 -0700
+Processing by PostsController#home as HTML
+  Rendering posts/home.html.erb within layouts/application
+  Rendered posts/_form.html.erb (1.0ms)
+  Rendered posts/_form.html.erb (0.1ms)
+  Rendered posts/home.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 113ms (Views: 110.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-24 12:22:57 -0700
+Processing by PostsController#home as HTML
+  Rendering posts/home.html.erb within layouts/application
+  Rendered posts/_form.html.erb (0.3ms)
+  Rendered posts/_form.html.erb (0.0ms)
+  Rendered posts/home.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 66ms (Views: 65.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-24 12:24:00 -0700
+Processing by PostsController#home as HTML
+  Rendering posts/home.html.erb within layouts/application
+  Rendered posts/_form.html.erb (1.0ms)
+  Rendered posts/_form.html.erb (0.1ms)
+  Rendered posts/home.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 79ms (Views: 77.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-24 12:27:31 -0700
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by PostsController#home as HTML
+  Rendering posts/home.html.erb within layouts/application
+  Rendered posts/_form.html.erb (0.3ms)
+  Rendered posts/_form.html.erb (0.0ms)
+  Rendered posts/home.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 452ms (Views: 445.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-24 12:28:08 -0700
+Processing by PostsController#home as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (4.9ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    12:   </thead>
+    13: 
+    14:   <tbody>
+    15:     <% @posts.each do |post| %>
+    16:       <tr>
+    17:         <td><%= post.code %></td>
+    18:         <td><%= link_to 'Show', post %></td>
+  
+app/views/posts/index.html.erb:15:in `_app_views_posts_index_html_erb__4482845933656964458_69860692333120'
+app/controllers/posts_controller.rb:5:in `home'
+Started GET "/" for 127.0.0.1 at 2018-03-24 12:28:36 -0700
+Processing by PostsController#home as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::MissingTemplate (Missing template posts/i with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/yun/Desktop/Coconut-Interpreter/app/views"
+):
+  
+app/controllers/posts_controller.rb:5:in `home'
+Started GET "/" for 127.0.0.1 at 2018-03-24 12:28:44 -0700
+Processing by PostsController#home as HTML
+  Rendering posts/home.html.erb within layouts/application
+  Rendered posts/_form.html.erb (0.6ms)
+  Rendered posts/_form.html.erb (0.0ms)
+  Rendered posts/home.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 78ms (Views: 77.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-24 12:29:18 -0700
+Processing by PostsController#home as HTML
+  Rendering posts/home.html.erb within layouts/application
+  Rendered posts/_form.html.erb (0.3ms)
+  Rendered posts/_form.html.erb (0.1ms)
+  Rendered posts/home.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 63ms (Views: 62.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/login" for 127.0.0.1 at 2018-03-24 12:31:06 -0700
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"login"}
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  `posts`.* FROM `posts` WHERE `posts`.`id` = 0 LIMIT 1[0m
+Completed 404 Not Found in 16ms (ActiveRecord: 2.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=login):
+  
+app/controllers/posts_controller.rb:70:in `set_post'
+Started GET "/posts/login" for 127.0.0.1 at 2018-03-24 12:33:45 -0700
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"login"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  `posts`.* FROM `posts` WHERE `posts`.`id` = 0 LIMIT 1[0m
+Completed 404 Not Found in 3ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=login):
+  
+app/controllers/posts_controller.rb:70:in `set_post'
+Started GET "/" for 127.0.0.1 at 2018-03-24 12:39:25 -0700
+  
+SyntaxError (/home/yun/Desktop/Coconut-Interpreter/app/controllers/posts_controller.rb:78: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/posts_controller.rb:78: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/" for 127.0.0.1 at 2018-03-24 12:39:50 -0700
+Processing by PostsController#home as HTML
+  Rendering posts/home.html.erb within layouts/application
+  Rendered posts/home.html.erb within layouts/application (3.9ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Missing partial posts/_form, application/_form with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/yun/Desktop/Coconut-Interpreter/app/views"
+):
+    127: 
+    128: 
+    129: <!--
+    130: <%= render 'form', post: @post %>
+    131: <h1>New Code</h1>
+    132: 
+    133: <p>This page needs to be decorated so it looks like a console</p>
+  
+app/views/posts/home.html.erb:130:in `_app_views_posts_home_html_erb___1550360635270238255_69860675238260'
+app/controllers/posts_controller.rb:5:in `home'
+Started GET "/" for 127.0.0.1 at 2018-03-24 12:40:28 -0700
+Processing by PostsController#home as HTML
+  Rendering posts/home.html.erb within layouts/application
+  Rendered posts/home.html.erb within layouts/application (4.2ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Missing partial posts/_form, application/_form with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/yun/Desktop/Coconut-Interpreter/app/views"
+):
+    127: 
+    128: 
+    129: <!--
+    130: <%= render 'form', post: @post %>
+    131: <h1>New Code</h1>
+    132: 
+    133: <p>This page needs to be decorated so it looks like a console</p>
+  
+app/views/posts/home.html.erb:130:in `_app_views_posts_home_html_erb___1550360635270238255_69860675089520'
+app/controllers/posts_controller.rb:5:in `home'
+Started GET "/" for 127.0.0.1 at 2018-03-24 12:41:50 -0700
+Processing by PostsController#home as HTML
+  Rendering posts/home.html.erb
+  Rendered posts/home.html.erb (3.0ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Missing partial posts/_form, application/_form with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/yun/Desktop/Coconut-Interpreter/app/views"
+):
+    127: 
+    128: 
+    129: <!--
+    130: <%= render 'form', post: @post %>
+    131: <h1>New Code</h1>
+    132: 
+    133: <p>This page needs to be decorated so it looks like a console</p>
+  
+app/views/posts/home.html.erb:130:in `_app_views_posts_home_html_erb___1550360635270238255_69860673516200'
+app/controllers/posts_controller.rb:6:in `home'
+Started GET "/" for 127.0.0.1 at 2018-03-24 12:42:49 -0700
+Processing by PostsController#home as HTML
+  Rendering posts/home.html.erb
+  Rendered posts/home.html.erb (6.4ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Missing partial posts/_form, application/_form with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/yun/Desktop/Coconut-Interpreter/app/views"
+):
+    134: <p>We also need to add a frame for returning output, so that people</p>
+    135: <p>We will make this page to our future home page, and possibly deleteing all other links, only keeping one to show the past code implemented if needed</p>
+    136: 
+    137: <%= render 'form', post: @post %>
+    138: 
+    139: <p>After creating this goes to show page</p>
+    140: 
+  
+app/views/posts/home.html.erb:137:in `_app_views_posts_home_html_erb___1550360635270238255_69860676223500'
+app/controllers/posts_controller.rb:6:in `home'
+Started GET "/" for 127.0.0.1 at 2018-03-24 12:43:01 -0700
+Processing by PostsController#home as HTML
+  Rendering posts/home.html.erb
+  Rendered posts/home.html.erb (3.1ms)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-24 12:44:01 -0700
+Processing by PostsController#home as HTML
+  Rendering posts/home.html.erb
+  Rendered posts/home.html.erb (3.6ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Missing partial posts/_form, application/_form with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/yun/Desktop/Coconut-Interpreter/app/views"
+):
+    127: 
+    128: 
+    129: <!--
+    130: <%= render 'form', post: @post %>
+    131: <h1>New Code</h1>
+    132: 
+    133: <p>This page needs to be decorated so it looks like a console</p>
+  
+app/views/posts/home.html.erb:130:in `_app_views_posts_home_html_erb___1550360635270238255_69860677174760'
+app/controllers/posts_controller.rb:6:in `home'
+Started GET "/" for 127.0.0.1 at 2018-03-24 12:44:27 -0700
+Processing by PostsController#home as HTML
+  Rendering posts/home.html.erb
+  Rendered posts/home.html.erb (2.2ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Missing partial posts/_form, application/_form with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/yun/Desktop/Coconut-Interpreter/app/views"
+):
+    127: 
+    128: 
+    129: <!--
+    130: <%= render 'form', post: @post %>
+    131: <h1>New Code</h1>
+    132: 
+    133: <p>This page needs to be decorated so it looks like a console</p>
+  
+app/views/posts/home.html.erb:130:in `_app_views_posts_home_html_erb___1550360635270238255_69860669857940'
+app/controllers/posts_controller.rb:6:in `home'
+Started GET "/" for 127.0.0.1 at 2018-03-24 12:44:31 -0700
+Processing by PostsController#home as HTML
+  Rendering posts/home.html.erb
+  Rendered posts/home.html.erb (5.4ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Missing partial posts/_form, application/_form with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/yun/Desktop/Coconut-Interpreter/app/views"
+):
+    127: 
+    128: 
+    129: <!--
+    130: <%= render 'form', post: @post %>
+    131: <h1>New Code</h1>
+    132: 
+    133: <p>This page needs to be decorated so it looks like a console</p>
+  
+app/views/posts/home.html.erb:130:in `_app_views_posts_home_html_erb___1550360635270238255_69860675578720'
+app/controllers/posts_controller.rb:6:in `home'
+Started GET "/" for 127.0.0.1 at 2018-03-24 12:45:10 -0700
+Processing by PostsController#home as HTML
+  Rendering posts/home.html.erb
+  Rendered posts/_form.html.erb (0.3ms)
+  Rendered posts/_form.html.erb (0.0ms)
+  Rendered posts/home.html.erb (2.0ms)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-24 12:45:15 -0700
+Processing by PostsController#home as HTML
+  Rendering posts/home.html.erb
+  Rendered posts/_form.html.erb (1.0ms)
+  Rendered posts/_form.html.erb (0.1ms)
+  Rendered posts/home.html.erb (5.7ms)
+Completed 200 OK in 11ms (Views: 8.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-24 12:45:27 -0700
+Processing by PostsController#home as HTML
+  Rendering posts/home.html.erb
+  Rendered posts/_form.html.erb (0.3ms)
+  Rendered posts/_form.html.erb (0.0ms)
+  Rendered posts/home.html.erb (2.2ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-24 12:45:33 -0700
+Processing by PostsController#home as HTML
+  Rendering posts/home.html.erb
+  Rendered posts/_form.html.erb (0.4ms)
+  Rendered posts/_form.html.erb (0.0ms)
+  Rendered posts/home.html.erb (3.0ms)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-24 12:45:41 -0700
+Processing by PostsController#home as HTML
+  Rendering posts/home.html.erb
+  Rendered posts/_form.html.erb (0.4ms)
+  Rendered posts/_form.html.erb (0.0ms)
+  Rendered posts/home.html.erb (3.8ms)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-24 12:45:48 -0700
+Processing by PostsController#home as HTML
+  Rendering posts/home.html.erb
+  Rendered posts/_form.html.erb (0.7ms)
+  Rendered posts/_form.html.erb (0.0ms)
+  Rendered posts/home.html.erb (3.6ms)
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-24 12:45:53 -0700
+Processing by PostsController#home as HTML
+  Rendering posts/home.html.erb
+  Rendered posts/_form.html.erb (0.3ms)
+  Rendered posts/_form.html.erb (0.0ms)
+  Rendered posts/home.html.erb (2.7ms)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-24 12:46:05 -0700
+Processing by PostsController#home as HTML
+  Rendering posts/home.html.erb
+  Rendered posts/_form.html.erb (0.7ms)
+  Rendered posts/_form.html.erb (0.0ms)
+  Rendered posts/home.html.erb (3.7ms)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-24 12:46:28 -0700
+Processing by PostsController#home as HTML
+  Rendering posts/home.html.erb
+  Rendered posts/_form.html.erb (0.7ms)
+  Rendered posts/_form.html.erb (0.0ms)
+  Rendered posts/home.html.erb (3.0ms)
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-24 12:46:55 -0700
+Processing by PostsController#home as HTML
+  Rendering posts/home.html.erb
+  Rendered posts/_form.html.erb (0.4ms)
+  Rendered posts/_form.html.erb (0.0ms)
+  Rendered posts/home.html.erb (2.6ms)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-24 12:47:05 -0700
+Processing by PostsController#home as HTML
+  Rendering posts/home.html.erb
+  Rendered posts/_form.html.erb (0.7ms)
+  Rendered posts/_form.html.erb (0.1ms)
+  Rendered posts/home.html.erb (4.3ms)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-24 12:47:16 -0700
+Processing by PostsController#home as HTML
+  Rendering posts/home.html.erb
+  Rendered posts/_form.html.erb (0.7ms)
+  Rendered posts/_form.html.erb (0.0ms)
+  Rendered posts/home.html.erb (3.1ms)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.0ms)
+
+
