@@ -2,7 +2,6 @@
   "name": "coconut",
   "private": true,
   "dependencies": {
-    "cmd": "^0.1.0",
     "node-cmd": "^3.0.0"
   }
 }

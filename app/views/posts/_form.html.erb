@@ -61,7 +61,6 @@
 </pre>
 
 <script src="src-noconflict/ace.js" type="text/python" charset="utf-8"></script>
-
 <script>
     // create first editor
     var editor = ace.edit("editor");
@@ -88,45 +87,6 @@
     var input= editor.getValue();
     editor2.setValue(">>>" + input);
 
-    function send(){
-      // window.location.href = "http://stackoverflow.com";
-
-      console.log('Starting...')
-      var cmd = require("/node_modules/node-cmd/cmd.js");
-      console.log(cmd);
-      execute(cmd);
-    }
-
-    function execute(cmd){
-      const processRef=cmd.get('python -i');
-      editor2.setValue(">>>" + cmd);
-      editor2.setValue(">>>");
-      let data_line = '';
-       
-      //listen to the python terminal output 
-      processRef.stdout.on(
-        'data',
-        function(data) {
-          data_line += data;
-          if (data_line[data_line.length-1] == '\n') {
-            console.log(data_line);
-          }
-        }
-      );
-
-      // change this part to user input
-      const pythonTerminalInput=`primes = [2, 3, 5, 7]
-      for prime in primes:
-          print(prime)
-
-      `;
-       
-      //show what we are doing 
-      console.log(`>>>${pythonTerminalInput}`);
-
-      //send it to the open python terminal 
-      processRef.stdin.write(pythonTerminalInput);
-    }
 
     function sendData(data) {
       var XHR = new XMLHttpRequest();
@@ -155,7 +115,29 @@
 
       xhttp.onreadystatechange = function() {
           if (this.readyState == 4 && this.status == 200) {
-              document.getElementById("editor2").setValue(">>>" + XHR.responseText);
+            var cmd = require('node-cmd');
+            const processRef=cmd.get('python -i');
+            let data_line = '';             
+            //listen to the python terminal output 
+            processRef.stdout.on(
+              'data',
+              function(data) {
+                data_line += data;
+                if (data_line[data_line.length-1] == '\n') {
+                  console.log(data_line);
+                }
+              }
+            );
+            // change this part to user input
+            const pythonTerminalInput=`primes = [2, 3, 5, 7]
+            for prime in primes:
+                print(prime)
+            `;
+            //show what we are doing 
+            console.log(`>>>${pythonTerminalInput}`);
+            //send it to the open python terminal 
+            processRef.stdin.write(pythonTerminalInput);
+            document.getElementById("editor2").setValue(">>>" + XHR.responseText);
          }
       };
 
