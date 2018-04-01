@@ -10,9 +10,6 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require trynode
-//= require console
-//= require posts
 //= require ace-rails-ap
 //= require rails-ujs
 //= require turbolinks
