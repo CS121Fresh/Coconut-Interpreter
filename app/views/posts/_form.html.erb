@@ -19,7 +19,7 @@
         margin: auto;
         position: relative;
         height: 400px;
-        width: 500px;
+        width: 80%;
     }
 
     .scrollmargin {
@@ -35,6 +35,8 @@
         text-align: center;
         border: medium solid transparent;
         display: inline-block;
+        position: relative;
+        left: 120px;
     }
 
     .button:hover {
@@ -46,20 +48,28 @@
   </style>
 </head>
 <body>
-
-<pre id="editor">
-    print "Hello World"
-</pre>
-
-<div class="margin" align="center">
-    <span onclick="send()" class="button">
-        RUN
-    </span>
+<h2 align="center"> Coconut Interpreter</h2>
+<div>
+  <pre id="editor">
+      print "Hello World"
+  </pre>
 </div>
-
-<pre id="editor2" style="height: 200px;">
-    >>>
-</pre>
+<div class="buttons">
+    <button onclick="send()" class="button">
+        RUN
+    </button>
+    <button onclick="send()" class="button">
+        INPUT
+    </button>
+    <button onclick="send()" class="button">
+        SAVE
+    </button>
+</div>
+<div>
+  <pre id="editor2" style="height: 200px;">
+      >>>
+  </pre>
+<div>
 
 
 <script src="src-noconflict/ace.js" type="text/python" charset="utf-8"></script>
@@ -96,9 +106,8 @@
     }
 
     function execute(cmd){
+      editor2.setValue(">>> " + cmd);
       const processRef=cmd.get('python -i');
-      editor2.setValue(">>>" + cmd);
-      editor2.setValue(">>>");
       let data_line = '';
 
       //listen to the python terminal output
@@ -120,10 +129,11 @@
       `;
 
       //show what we are doing
-      console.log(`>>>${pythonTerminalInput}`);
+      editor2.setValue(`>>>${pythonTerminalInput}`);
 
       //send it to the open python terminal
       processRef.stdin.write(pythonTerminalInput);
+
     }
 
     function sendData() {

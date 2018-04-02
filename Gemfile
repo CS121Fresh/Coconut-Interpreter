@@ -58,3 +58,7 @@ gem 'ace-rails-ap'
 
 #npm_rails from https://rubygems.org/gems/npm-rails/versions/0.2.1
 gem 'npm-rails', '~> 0.2.1'
+
+gem 'webpacker', '~> 3.4'
+
+gem 'react-rails', '~> 1.7', '>= 1.7.1'
