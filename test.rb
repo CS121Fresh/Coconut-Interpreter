@@ -1,11 +1,46 @@
 require "selenium-webdriver"
+require "rspec"
 
-driver = Selenium::WebDriver.for :firefox
-driver.navigate.to "http://18.191.3.155:3001/"
+decribe "Coconut interpreter" do
 
-element = driver.find_element(name: 'q')
-element.click
-element.send_keys "Hello WebDriver!"
-element.submit
+    describe "print from script" do
+        it "confirm print from script" do
+            driver = Selenium::WebDriver.for :firefox
+            driver.navigate.to "http://18.191.3.155:3001/"
 
-driver.quit
+            script_input = driver.find_element(id: "editor")
+            run = driver.find_element(class: "button")
+
+            script_input.send_keys("print("hello world!")")
+            run.click
+
+                #confirm
+            outcome = driver.find_element(id: "console_output") #id not sure
+            outcome_printed1 = outcome.text
+            expect(outcome_printed1).to eq("hello world!")
+
+            driver.quit
+        end
+    end
+
+    describe "addition from console" do
+        it "confirm add from console" do
+            driver = Selenium::WebDriver.for :firefox
+            driver.navigate.to "http://18.191.3.155:3001/"
+
+            console_input = driver.find_element(id: "editor2")
+            run = driver.find_element(class: "button")
+
+            console_input.send_keys("1+1")
+            run.click
+
+            outcome = driver.find_element(id: "console_output") #id not sure
+            outcome_printed2 = outcome.text #2?
+            expect(outcome_printed2).to eq("2")
+
+            driver.quit
+        end
+    end
+
+    
+end
