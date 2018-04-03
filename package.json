@@ -2,7 +2,6 @@
   "name": "coconut",
   "private": true,
   "dependencies": {
-<<<<<<< HEAD
     "@rails/webpacker": "^3.4.1",
     "babel-preset-react": "^6.24.1",
     "cmd": "^0.1.0",
@@ -13,8 +12,5 @@
   },
   "devDependencies": {
     "webpack-dev-server": "2.11.2"
-=======
-    "node-cmd": "^3.0.0"
->>>>>>> 412b5a501703a574ab329decf8ba0ef0343ad78c
   }
 }
