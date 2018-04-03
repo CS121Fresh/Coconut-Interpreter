@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Editor</title>
+  <style type="text/css" media="screen">
+    html {
+        overflow-y: scroll;
+    }
+
+    body {
+        overflow: hidden;
+        transform: translateZ(0);
+    }
+
+    .ace_editor {
+        border: 1px solid lightgray;
+        margin: auto;
+        position: relative;
+        height: 400px;
+        width: 80%;
+    }
+
+    .scrollmargin {
+        height: 100px;
+        text-align: center;
+    }
+
+    .button {
+        color: lightblue;
+        cursor: pointer;
+        font: 15px arial;
+        padding: 10px;
+        text-align: center;
+        border: medium solid transparent;
+        display: inline-block;
+        position: relative;
+        left: 120px;
+    }
+
+    .button:hover {
+        border: medium solid lightgray;
+        border-radius: 2px 2px 2px 2px;
+        box-shadow: 0 0 12px 0 lightblue;
+    }
+
+  </style>
+</head>
+<body>
+<h2 align="center"> Coconut Interpreter</h2>
+<div>
+  <pre id="editor">
+      print "Hello World"
+  </pre>
+</div>
+<div class="buttons">
+    <button onclick="send()" class="button">
+        RUN
+    </button>
+    <button onclick="send()" class="button">
+        INPUT
+    </button>
+    <button onclick="send()" class="button">
+        SAVE
+    </button>
+</div>
+<div>
+  <pre id="editor2" style="height: 200px;">
+      >>>
+  </pre>
+<div>
+
+
+<script src="src-noconflict/ace.js" type="text/python" charset="utf-8"></script>
+<script>
+    // create first editor
+    var editor = ace.edit("editor");
+    editor.setOptions({
+      mode: "ace/mode/python",
+      theme: "ace/theme/tomorrow",
+      autoScrollEditorIntoView: true
+    });
+    editor.renderer.setScrollMargin(10, 10);
+
+    //create the console
+    var editor2 = ace.edit("editor2");
+    editor2.setOptions({
+        mode: "ace/mode/python",
+        theme: "ace/theme/tomorrow_night",
+        autoScrollEditorIntoView: true
+    });
+    editor2.renderer.setShowGutter(false);
+    //dead code that set the value in the console
+      //var input= editor.getValue();
+      //editor2.setValue(">>>" + input);
+
+    function send(){
+      // window.location.href = "http://stackoverflow.com";
+
+      console.log('Starting...')
+      var cmd = require("/node_modules/node-cmd/cmd.js");
+      console.log(cmd);
+      execute(cmd);
+    }
+
+    function execute(cmd){
+      editor2.setValue(">>> " + cmd);
+      const processRef=cmd.get('python -i');
+      let data_line = '';
+
+      //listen to the python terminal output
+      processRef.stdout.on(
+        'data',
+        function(data) {
+          data_line += data;
+          if (data_line[data_line.length-1] == '\n') {
+            console.log(data_line);
+          }
+        }
+      );
+
+      // change this part to user input
+      const pythonTerminalInput=`primes = [2, 3, 5, 7]
+      for prime in primes:
+          print(prime)
+
+      `;
+
+      //show what we are doing
+      editor2.setValue(`>>>${pythonTerminalInput}`);
+
+      //send it to the open python terminal
+      processRef.stdin.write(pythonTerminalInput);
+
+    }
+
+    function sendData() {
+      var XHR = new XMLHttpRequest();
+      var urlEncodedData = "";
+      var urlEncodedDataPairs = [];
+      var name;
+      var data = editor.getValue();
+
+      // Turn the data object into an array of URL-encoded key/value pairs.
+      for(name in data) {
+        urlEncodedDataPairs.push(encodeURIComponent(name) + '=' + encodeURIComponent(data[name]));
+      }
+
+      // Combine the pairs into a single string and replace all %-encoded spaces to
+      // the '+' character; matches the behaviour of browser form submissions.
+      urlEncodedData = urlEncodedDataPairs.join('&').replace(/%20/g, '+');
+
+      // Define what happens on successful data submission
+      XHR.addEventListener('load', function(event) {
+        alert('Yeah! Data sent and response loaded.');
+      });
+
+      // Define what happens in case of error
+      XHR.addEventListener('error', function(event) {
+        alert('Oups! Something goes wrong.');
+      });
+
+      xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            var cmd = require('node-cmd');
+            const processRef=cmd.get('python -i');
+            let data_line = '';
+            //listen to the python terminal output
+            processRef.stdout.on(
+              'data',
+              function(data) {
+                data_line += data;
+                if (data_line[data_line.length-1] == '\n') {
+                  console.log(data_line);
+                }
+              }
+            );
+            // change this part to user input
+            const pythonTerminalInput=`primes = [2, 3, 5, 7]
+            for prime in primes:
+                print(prime)
+            `;
+            //show what we are doing
+            console.log(`>>>${pythonTerminalInput}`);
+            //send it to the open python terminal
+            processRef.stdin.write(pythonTerminalInput);
+            document.getElementById("editor2").setValue(">>>" + XHR.responseText);
+         }
+      };
+
+      // Set up our request
+      XHR.open('POST', 'https://tio.run/#coconut/');
+
+      // Add the required HTTP header for form data POST requests
+      XHR.setRequestHeader('Content-Type', 'http://18.191.3.155:3001/');
+
+      // Finally, send our data.
+      XHR.send(urlEncodedData);
+
+      document.getElementById("editor2").setValue(XHR.responseText);
+    }
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+# Browserify is required.
+# You can install it globally and delete from here.
+npm 'browserify', require: false, development: true
+
+# call 'React' in your js code to use it
+npm 'react'
+
+# Set version
+npm 'redux', '3.3.1'
+
+# Set build_name to a package.
+# Call '_' to get Underscore
+npm 'underscore', build_name: '_'
+
+# You can add a package for development
+npm 'jasmine', development: true
+
+# Or in block
+development do
+  npm 'jasmine'
+end
