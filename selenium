@@ -1,0 +1,40 @@
+Selenum testing training
+
+http://selenium-python.readthedocs.io/locating-elements.html
+
+1, copy ruby gem to gemfile in https://rubygems.org/gems/selenium-webdriver
+    with 
+    gem 'selenium-webdriver', '~> 3.11' as gem file
+    then in terminal type
+    gem install bandler
+    to install gem
+    then type
+    bundle install
+
+2, download geckodriver so taht test wright in webdriver can be run on firefox
+    download package : https://github.com/mozilla/geckodriver/releases
+
+3. Using API to write web driver
+doc: https://seleniumhq.github.io/selenium/docs/api/rb/Selenium/WebDriver
+
+
+    require "selenium-webdriver"
+
+    driver = Selenium::WebDriver.for :firefox
+    driver.navigate.to "http://google.com"
+
+    element = driver.find_element(name: 'q')
+    element.click
+    element.send_keys "Hello WebDriver!"
+    element.submit
+
+    driver.quit
+
+
+run test
+rspec test.rb
+
+modify path to download dir with gekodriver
+export PATH=$PATH:~/Downloads/
+echo $PATH
+
