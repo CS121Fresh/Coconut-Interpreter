@@ -38,3 +38,13 @@ modify path to download dir with gekodriver
 export PATH=$PATH:~/Downloads/
 echo $PATH
 
+
+chrome driver
+https://stackoverflow.com/questions/39541739/chromedriver-error-chrome-version-must-be-52-using-nightwatch?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
+wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+x64
+
+sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list
+sudo apt-get update
+sudo apt-get install google-chrome-stable
+
